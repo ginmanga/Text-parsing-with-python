@@ -26,9 +26,9 @@ yy = [int(i) for i in temp_inp.split(',')]
 y = []
 [y.append(i-1) for i in yy]
 
-#Function: Strip Chinese characters and unwanted leading and trailing spaces
 
 def remove(x):
+    """Function: Strip Chinese characters and lt spaces."""
     x = x.strip()
     x = RE.sub('', x)
     x = x.strip()
@@ -99,7 +99,7 @@ for i in os.listdir(directory_a):
                         aa = aa2
                     if fslash2 == -1 and go == 1 and go1 == 0:
                         aa = aa1
-                b = [i, strip_a, aa]
+                b = [i, a.value.strip(), aa]
                 b.extend([sheet.cell(row_n, xx).value for xx in y])
             interest_items.append(b)
 # Operation done only for the first sheet in each book.
