@@ -63,11 +63,6 @@ for i in os.listdir(directory_a):
                 b = [i, a.value, aa]
                 b.extend([sheet.cell(row_n, xx).value for xx in y])
             else:
-                #strip_a = a.value.rstrip()
-                #strip_a = strip_a.lstrip()
-                #aa = strip_a
-                #aa = RE.sub('', aa)
-                #aa = aa.rstrip()
                 aa = remove(a.value)
                 # Fix multiple numbers separated by slashes
                 # Can turn into a function for better code and functionality
