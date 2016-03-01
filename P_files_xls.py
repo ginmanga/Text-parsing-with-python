@@ -26,6 +26,15 @@ yy = [int(i) for i in temp_inp.split(',')]
 y = []
 [y.append(i-1) for i in yy]
 
+#Function: Strip Chinese characters and unwanted leading and trailing spaces
+
+def remove(x):
+    x = x.strip()
+    x = RE.sub('', x)
+    x = x.strip()
+    return x
+
+
 # Main loop
 for i in os.listdir(directory_a):
     ii = directory_a+"/"+i
@@ -54,12 +63,12 @@ for i in os.listdir(directory_a):
                 b = [i, a.value, aa]
                 b.extend([sheet.cell(row_n, xx).value for xx in y])
             else:
-                strip_a = a.value.rstrip()
-                strip_a = strip_a.lstrip()
-                aa = strip_a
-                aa = RE.sub('', aa)
-                aa = aa.rstrip()
-                aa = aa.lstrip()
+                #strip_a = a.value.rstrip()
+                #strip_a = strip_a.lstrip()
+                #aa = strip_a
+                #aa = RE.sub('', aa)
+                #aa = aa.rstrip()
+                aa = remove(a.value)
                 # Fix multiple numbers separated by slashes
                 # Can turn into a function for better code and functionality
                 fslash = aa.find('/')
