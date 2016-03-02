@@ -1,3 +1,4 @@
+"""Program to extract data from excel files."""
 # ------------------------------------------------------------------------------
 # Name:        Extract Data Excel for Kay
 # Purpose:     Extract Data Excel for Kay
@@ -32,6 +33,11 @@ def remove(x):
     x = x.strip()
     x = RE.sub('', x)
     x = x.strip()
+    return x
+
+
+def clear_idcode(x):
+    """Function to select code when there is an unwanted character."""
     return x
 
 
