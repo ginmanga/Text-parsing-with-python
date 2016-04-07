@@ -44,15 +44,14 @@ def clear_idcode(x):
 # Main loop
 for i in os.listdir(directory_a):
     ii = directory_a+"/"+i
-    # Check if element is a directory
-    if os.path.isdir(ii) is True:
-        break
 # Try to open file using xlrd.open_workbook function
 # If it fails, then do not perform operations on that file
     try:
         c_file = xlrd.open_workbook(filename=ii)
+        cc = "opening file: "+ii
+        print(cc)
     except:
-        break
+        continue
 # Create sheet object from the book object
     sheet_list = c_file.sheets()
     for sheet in c_file.sheets():
